@@ -1,170 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Telus | Future of Smart Solutions</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Telus - Modern solutions for digital growth. Join us and transform your future today.">
-  <meta name="keywords" content="Telus, digital solutions, lead generation, modern website, futuristic UI">
-  <meta name="author" content="Telus">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Telus | Smart Digital Future">
-  <meta property="og:description" content="Join Telus and experience futuristic digital transformation.">
-  <meta property="og:type" content="website">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      background: radial-gradient(circle at top, #0f172a, #020617);
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    section {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 600px;
-      width: 100%;
-      backdrop-filter: blur(20px);
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, #00f5ff, #a855f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #cbd5f5;
-      margin-bottom: 25px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 10px;
-      border: none;
-      outline: none;
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(90deg, #00f5ff, #a855f7);
-      color: #000;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #00f5ff;
-    }
-
-    .success {
-      display: none;
-      margin-top: 15px;
-      color: #00ffae;
-      font-size: 0.9rem;
-    }
-
-    .bg-glow {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0,255,255,0.2), transparent);
-      filter: blur(100px);
-      z-index: -1;
-      animation: move 10s infinite alternate;
-    }
-
-    @keyframes move {
-      from { transform: translate(-50px, -50px); }
-      to { transform: translate(50px, 50px); }
-    }
-
-    footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #64748b;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telus | Future Digital Growth</title>
+<meta name="description" content="Telus - Futuristic digital solutions to grow your business.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:radial-gradient(circle at top,#0f172a,#020617);color:#fff}
+nav{position:fixed;top:0;width:100%;display:flex;justify-content:center;gap:30px;padding:15px;background:rgba(0,0,0,0.3);backdrop-filter:blur(10px)}
+nav a{color:#cbd5f5;text-decoration:none;font-size:14px}
+section{height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px}
+.container{max-width:600px;background:rgba(255,255,255,0.05);padding:40px;border-radius:20px;backdrop-filter:blur(20px)}
+h1{font-size:3rem;background:linear-gradient(90deg,#00f5ff,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+p{color:#cbd5f5;margin:20px 0}
+button{padding:12px 20px;border:none;border-radius:10px;background:linear-gradient(90deg,#00f5ff,#a855f7);cursor:pointer}
+</style>
 </head>
-
 <body>
-
-<div class="bg-glow"></div>
-
+<nav>
+<a href="index.html">Home</a>
+<a href="plans.html">Our Plans</a>
+<a href="contact.html">Contact</a>
+</nav>
 <section>
-  <div class="container">
-    <h1>Telus</h1>
-    <p>Step into the future of digital innovation. Join Telus and unlock powerful growth opportunities.</p>
-
-    <form id="leadForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <button type="submit">Get Started</button>
-    </form>
-
-    <div class="success" id="successMsg">✔ You're in! We'll contact you soon.</div>
-  </div>
+<div class="container">
+<h1>Telus</h1>
+<p>Step into the future of digital innovation. We help you scale faster with cutting-edge solutions.</p>
+<a href="plans.html"><button>Explore Plans</button></a>
+</div>
 </section>
-
-<footer>
-  © 2026 Telus. All rights reserved.
-</footer>
-
-<script>
-  const form = document.getElementById('leadForm');
-  const successMsg = document.getElementById('successMsg');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    // Simulate lead capture
-    successMsg.style.display = 'block';
-    form.reset();
-
-    // Optional: send to backend here
-  });
-</script>
-
 </body>
 </html>
