@@ -6,6 +6,51 @@
 <title>iPhone 17e</title>
 
 <style>
+  input#promoCode {
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 70%;
+}
+input#promoCode:focus-visible {
+    border: 2px solid rgb(36, 135, 0) !important;
+    background: #ffffff;
+    opacity: 95% !important;
+    outline: none !important;
+}
+.promo button {
+    border-width: 0px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-left: 30px;
+    letter-spacing: -0.8px;
+    overflow-wrap: break-word;
+    font-weight: 700;
+    font-family: sans-serif;
+    padding: 10px 32px;
+    cursor: pointer;
+    background: none rgb(43, 128, 0);
+    transition: background 0.2s;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition:0.5s;
+}
+.promo button:hover {
+    box-shadow: 0px 0px 0px 0.0625rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(43, 128, 0);
+}
+p#discountMsg {
+    color: rgb(42, 44, 46);
+    opacity: 80%;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-top: 18px;
+}
 * { box-sizing: border-box; margin:0; padding:0; }
 
 body {
@@ -365,8 +410,8 @@ h1.Heading__StyledHeading-mpz92r-0.kQzvTD {
 <div class="selector-group">
   <h4>Memory options:</h4>
   <div class="options" id="storageOpts">
-    <div class="option stogr selected" onclick="selectStorage(this,0)">256 GB</div>
-    <div class="option stogr" onclick="selectStorage(this,1)">512 GB</div>
+    <div class="option stogr selected" onclick="selectStorage(this,0)" data-storage="256" data-price="800">256 GB</div>
+    <div class="option stogr" onclick="selectStorage(this,1)" data-storage="256" data-price="900">512 GB</div>
     <!-- <div class="option stogr" onclick="selectStorage(this,2)">1 TB</div> -->
   </div>
 </div>
@@ -388,7 +433,12 @@ h1.Heading__StyledHeading-mpz92r-0.kQzvTD {
       onclick="selectColor(this,'white','White')"></div>
   </div>
 </div>
+<div class="promo">
+<input type="text" id="promoCode" placeholder="Enter Promo Code">
+<button onclick="applyPromo()">Apply</button>
 
+<p id="discountMsg"></p>
+</div>
 <button class="buy-btn">Buy Now</button>
 
 </div>
@@ -540,6 +590,27 @@ document.querySelectorAll('.fade-left, .fade-right, .fade-in')
     }
   });
 });
+</script>
+  <script>
+let originalPrice = 32;
+let currentPrice = originalPrice;
+
+function applyPromo() {
+  const code = document.getElementById("promoCode").value.trim().toUpperCase();
+  let discount = 0;
+
+  if(code === "TELUSLOYAL8945") discount = 1;
+  else {
+    document.getElementById("discountMsg").innerText = "Invalid Code.";
+    currentPrice = originalPrice;
+    document.getElementById("price").innerText = "$" + Math.round(currentPrice);
+    return;
+  }
+
+  currentPrice = originalPrice - (originalPrice * discount);
+  document.getElementById("price").innerText = "$" + Math.round(currentPrice);
+  document.getElementById("discountMsg").innerText = "Promo Applied.";
+}
 </script>
 </body>
 </html>
