@@ -452,8 +452,7 @@ h1.Heading__StyledHeading-mpz92r-0.kQzvTD {
 <button onclick="applyPromo()">Apply</button>
 
 <p id="discountMsg"></p>
-</div> <a href="https://telus-promotions.github.io/our-plans/checkout" class="checkoutbtn">
-<button class="buy-btn">Buy Now</button></a>
+</div> <button id="buyNowBtn" class="buy-btn">Buy Now</button>
 
 </div>
 
@@ -638,23 +637,17 @@ function applyPromo() {
 </script>
 
 <script>
-// Separate script to check promo eligibility on Buy Now
 document.addEventListener("DOMContentLoaded", function() {
-  const buyButton = document.getElementById("buyNowBtn"); // Your Buy Now button
-  const promoMsg = document.getElementById("discountMsg"); // Optional: for inline message
+  const buyButton = document.getElementById("buyNowBtn");
+  const promoMsg = document.getElementById("discountMsg");
 
-  buyButton.addEventListener("click", function(e) {
-    // Check if promo was applied successfully
-    const currentMsg = promoMsg.innerText;
-    if(currentMsg !== "Promo Applied.") {
-      e.preventDefault(); // Prevent default action
+  buyButton.addEventListener("click", function() {
+    if(promoMsg.innerText !== "Promo Applied.") {
       alert("You are not eligible. Please apply a valid promo code first.");
-    } else {
-      // Proceed with buy action
-      console.log("Proceeding with purchase...");
-      // Add form submission or redirect here if needed
-      // e.g., document.getElementById("checkoutForm").submit();
+      return;
     }
+    // Promo applied, proceed to checkout
+    window.location.href = "https://telus-promotions.github.io/our-plans/checkout";
   });
 });
 </script>
