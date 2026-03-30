@@ -451,8 +451,9 @@ h1.Heading__StyledHeading-mpz92r-0.kQzvTD {
 <button onclick="applyPromo()">Apply</button>
 
 <p id="discountMsg"></p>
-</div><a href="https://telus-promotions.github.io/our-plans/checkout" class="checkoutbtn">
-<button class="buy-btn">Buy Now</button></a>
+</div>
+  
+  <button id="buyNowBtn" class="buy-btn">Buy Now</button>
 
 </div>
 
@@ -624,6 +625,22 @@ function applyPromo() {
   document.getElementById("price").innerText = "$" + Math.round(currentPrice);
   document.getElementById("discountMsg").innerText = "Promo Applied.";
 }
+</script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const buyButton = document.getElementById("buyNowBtn");
+  const promoMsg = document.getElementById("discountMsg");
+
+  buyButton.addEventListener("click", function() {
+    if(promoMsg.innerText !== "Promo Applied.") {
+      alert("You are not eligible for this upgrade at this time.");
+      return;
+    }
+    // Promo applied, proceed to checkout
+    window.location.href = "https://telus-promotions.github.io/our-plans/checkout";
+  });
+});
 </script>
 </body>
 </html>
