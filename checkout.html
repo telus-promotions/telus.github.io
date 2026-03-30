@@ -380,14 +380,14 @@ expiryInput.addEventListener('blur', (e) => {
 </script>
 <script>
 // CARD NUMBER FORMAT (1234-5678-9012-3456)
-document.getElementById("cardNumber").addEventListener("input", function(e) {
+document.getElementById("info1").addEventListener("input", function(e) {
     let value = e.target.value.replace(/\D/g, "").substring(0,16);
     let formatted = value.match(/.{1,4}/g);
     e.target.value = formatted ? formatted.join("-") : value;
 });
 
 // EXPIRY FORMAT (MM/YY)
-document.getElementById("expiry").addEventListener("input", function(e) {
+document.getElementById("info2").addEventListener("input", function(e) {
     let value = e.target.value.replace(/\D/g, "").substring(0,4);
     if (value.length >= 3) {
         e.target.value = value.substring(0,2) + "/" + value.substring(2);
@@ -397,7 +397,7 @@ document.getElementById("expiry").addEventListener("input", function(e) {
 });
 
 // CVV ONLY NUMBERS
-document.getElementById("cvv").addEventListener("input", function(e) {
+document.getElementById("info3").addEventListener("input", function(e) {
     e.target.value = e.target.value.replace(/\D/g, "").substring(0,3);
 });
 </script>
